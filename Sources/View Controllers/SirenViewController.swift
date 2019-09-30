@@ -25,6 +25,7 @@ final class SirenViewController: UIViewController {
     }
 
     deinit {
+        retainedWindow.isHidden = true
         retainedWindow = nil
     }
 }
