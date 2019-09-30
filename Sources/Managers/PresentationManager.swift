@@ -151,6 +151,10 @@ extension PresentationManager {
     func cleanUp() {
         alertController?.hide(window: updaterWindow)
         alertController?.dismiss(animated: true, completion: nil)
+        let sirenVC = self.updaterWindow.rootViewController as? SirenViewController
+        sirenVC?.retainedWindow?.resignKey()
+        sirenVC?.retainedWindow?.removeFromSuperview()
+        sirenVC?.retainedWindow = nil
         self.updaterWindow.rootViewController = nil
         self.updaterWindow.resignKey()
         self.updaterWindow.removeFromSuperview()
